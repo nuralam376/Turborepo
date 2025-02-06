@@ -1,7 +1,5 @@
 import { Product } from "@repo/types";
 
-
-
 export default async function AllProducts() {
     let products: Product[] = [];
     
