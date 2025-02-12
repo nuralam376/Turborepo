@@ -1,4 +1,5 @@
 import { Product } from "@repo/types";
+import Link from "next/link";
 
 export default async function AllProducts() {
     let products: Product[] = [];
@@ -21,12 +22,13 @@ export default async function AllProducts() {
     return (
         <div>
             <h1>Products</h1>
+            <Link href="/">Home</Link>
             <div>
                 {products.map((product: Product) => (
-                    <div key = {product.id}>
+                    <Link key = {product.id} href={`/products/${product.id}`}>
                         <p>Name: {product.name}</p>
                         <p>Price: {product.price}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
